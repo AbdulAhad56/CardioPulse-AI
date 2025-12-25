@@ -1,0 +1,326 @@
+:root {
+  --blue-glow: rgba(59, 130, 246, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+/* Custom Preloader */
+.shimmer-text {
+  background: linear-gradient(90deg, #1e293b, #3b82f6, #06b6d4, #1e293b);
+  background-size: 300% 100%;
+  animation: shimmer 2.5s infinite linear;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.progress-line {
+  width: 0%;
+  animation: progress 2.5s ease-in-out forwards;
+}
+
+@keyframes progress {
+  to {
+    width: 100%;
+  }
+}
+
+/* Background Particles Mockup */
+#particles-js {
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    #1e293b 0%,
+    #050810 100%
+  );
+}
+
+#particles-js::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23ffffff10'/%3E%3C/svg%3E");
+}
+
+/* Form Animations */
+.input-group {
+  transition: transform 0.3s ease;
+}
+
+.input-group:focus-within {
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050810;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 12px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Probability Ring Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Button Ripple Placeholder */
+button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Neural Pulse Animation for Icons */
+[data-lucide="heart"],
+[data-lucide="activity"] {
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% {
+    filter: drop-shadow(0 0 0px rgba(59, 130, 246, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+  }
+  100% {
+    filter: drop-shadow(0 0 0px rgba(59, 130, 246, 0));
+  }
+}
+
+/* Hover effect for Input Groups */
+.input-group {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 15px;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.input-group:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+}
+
+/* Prediction Ring Glow */
+#probabilityCircle {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* Floating Animation for the Card */
+.glass-card {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+#explainList li::before {
+  content: "⚠ ";
+  color: #f87171;
+  font-weight: bold;
+  text-align: center;
+}
+
+canvas {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* ========================= */
+/* NAVBAR STYLING ADDED      */
+/* ========================= */
+
+nav {
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav:hover {
+  background: rgba(5, 8, 16, 0.85);
+  box-shadow: 0 4px 20px rgba(217, 221, 227, 0.15);
+  border: radius 29px;
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(59, 130, 246, 0.9);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ========================= */
+/* PAGE SECTION STYLING      */
+/* ========================= */
+section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+html,
+body {
+  scroll-snap-type: y mandatory;
+}
+
+#home h1 {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 0px rgba(59, 130, 246, 0);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 0px rgba(59, 130, 246, 0);
+  }
+}
+
+#home p {
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards 0.3s;
+}
+
+#home a {
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+  transition: all 0.3s ease;
+}
+
+#home a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.55);
+}
+
+/* ========================= */
+/* ABOUT SECTION STYLING     */
+/* ========================= */
+
+#about {
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards 0.4s;
+  margin-top: 200px;
+}
+
+#about h2 {
+  text-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+}
+
+#about div:hover {
+  transform: translateY(-4px);
+}
+
+#about div {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+}
+
+/* ========================= */
+/* SMOOTH SCROLL BEHAVIOR    */
+/* ========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+/* FIX PREDICTION SECTION CENTERING */
+#predict {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: auto;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#probabilityCircle {
+  margin: 0 auto;
+}
