@@ -142,7 +142,7 @@ Academic Project — Department of Computer Science
 
 ```bash
 # Clone the repository
-git clone https://github.com/AbdulAhad56/CardioPulse-AI.git
+git clone https://github.com/ahadbuilds/CardioPulse-AI.git
 
 # Navigate to project folder
 cd CardioPulse-AI
